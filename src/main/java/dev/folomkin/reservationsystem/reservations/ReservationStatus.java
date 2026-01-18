@@ -1,4 +1,4 @@
-package dev.folomkin.reservationsystem.model;
+package dev.folomkin.reservationsystem.reservations;
 
 public enum ReservationStatus {
     PENDING,

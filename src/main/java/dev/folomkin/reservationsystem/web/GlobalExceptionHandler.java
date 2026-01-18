@@ -1,6 +1,6 @@
-package dev.folomkin.reservationsystem.exception;
+package dev.folomkin.reservationsystem.web;
 
-import dev.folomkin.reservationsystem.service.ReservationService;
+import dev.folomkin.reservationsystem.reservations.ReservationService;
 import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

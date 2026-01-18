@@ -1,6 +1,5 @@
-package dev.folomkin.reservationsystem.entity;
+package dev.folomkin.reservationsystem.reservations;
 
-import dev.folomkin.reservationsystem.model.ReservationStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

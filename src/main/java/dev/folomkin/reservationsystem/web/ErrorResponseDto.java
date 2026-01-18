@@ -1,4 +1,4 @@
-package dev.folomkin.reservationsystem.exception;
+package dev.folomkin.reservationsystem.web;
 
 import java.time.LocalDateTime;
 

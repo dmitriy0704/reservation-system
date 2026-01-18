@@ -1,8 +1,5 @@
-package dev.folomkin.reservationsystem.controller;
+package dev.folomkin.reservationsystem.reservations;
 
-import dev.folomkin.reservationsystem.model.Reservation;
-import dev.folomkin.reservationsystem.model.ReservationStatus;
-import dev.folomkin.reservationsystem.service.ReservationService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/reservation")
@@ -34,10 +30,17 @@ public class ReservationController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Reservation>> getAllReservations() {
+    public ResponseEntity<List<Reservation>> getAllReservations(
+            @RequestParam("roomId") Long roomId,
+            @RequestParam("userId") Long userId,
+            @RequestParam("pageSize") Integer pageSize,
+            @RequestParam("pageNumber") Integer pageNumber
+    ) {
         log.info("Called getAllReservations");
-        return ResponseEntity
-                .ok(reservationService.findAllReservations());
+        var filter = new ReservationSearchFilter(
+                roomId, userId, pageSize, pageNumber
+        );
+        return ResponseEntity.ok(reservationService.searchAllByFilter(filter));
     }
 
     @PostMapping

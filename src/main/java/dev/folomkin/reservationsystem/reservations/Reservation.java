@@ -1,7 +1,6 @@
-package dev.folomkin.reservationsystem.model;
+package dev.folomkin.reservationsystem.reservations;
 
 import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Null;
 
