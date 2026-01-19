@@ -71,6 +71,7 @@ public interface ReservationRepository extends JpaRepository<ReservationEntity, 
             WHERE (:roomId IS NULL OR r.roomId = :roomId)
             AND (:userId IS NULL OR r.userId = :userId)
        """)
+    // Если roomId NULL то не происходит фильтрации
     List<ReservationEntity> searchAllByFilter(
             @Param("roomId") Long roomId,
             @Param("userId") Long userId,
